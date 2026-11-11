@@ -35,7 +35,7 @@ button{font-family:inherit}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
 .nav{display:flex;align-items:center;gap:18px;padding:12px 0;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:10px;font:400 26px var(--font-display);text-decoration:none}
-.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--amber-ink);font-style:normal;font-size:17px;font-family:var(--font-body);font-weight:800}
+.logo i svg{width:26px;height:26px;display:block}.logo i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--amber-ink);font-style:normal;font-size:17px;font-family:var(--font-body);font-weight:800}
 .nav nav{display:flex;gap:4px 20px;flex-wrap:wrap;margin-left:auto;font-weight:600;font-size:16px}
 .nav nav a{text-decoration:none;color:var(--muted);padding:6px 2px}
 .nav nav a:hover{color:var(--accent)}
@@ -143,6 +143,17 @@ h2{font:400 clamp(30px,4.6vw,46px)/1.1 var(--font-display);margin:10px 0 14px;te
 .mail{font-weight:800;user-select:all;word-break:break-all}
 footer{padding:64px 0 48px;color:var(--muted);font-size:15px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* secțiuni adăugate 11 nov 2026 */
+.film{aspect-ratio:16/9;width:100%;border-radius:26px;background:var(--card);border:1.5px dashed var(--line);display:grid;place-items:center;text-align:center;padding:20px;color:var(--muted);font-weight:700}
+.film b{display:block;font:400 26px/1.2 var(--font-display);color:var(--ink);margin-bottom:6px}
+.film svg{width:54px;height:54px;margin:0 auto 12px;display:block;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.film iframe{width:100%;height:100%;border:0;border-radius:24px}
+.note{font-size:15px;color:var(--muted);margin:18px 0 0;max-width:70ch}
+.season{font:400 24px/1.2 var(--font-display);margin:34px 0 14px}
+.ev .where{font:800 13px var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.help{margin-top:16px}
+#aplicatia .steps{grid-template-columns:repeat(auto-fit,minmax(186px,1fr))}#aplicatia .steps .card{padding:20px}
+@media (max-width:700px){.nav{gap:6px}.nav nav{margin-left:0;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:18px;scrollbar-width:none;padding-bottom:2px}.nav nav a{white-space:nowrap}}
 </style>
 
 <style>
@@ -151,11 +162,13 @@ section{scroll-margin-top:100px}.app-shots{display:grid;grid-template-columns:re
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.app-shot button{transition:none}}
 </style><header>
   <div class="wrap nav">
-    <a class="logo" href="#sus"><i>✕</i>Izvod</a>
+    <a class="logo" href="#sus"><i><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="#fff8e8"><circle cx="12" cy="6.4" r="3.7"/><circle cx="17.6" cy="12" r="3.7"/><circle cx="12" cy="17.6" r="3.7"/><circle cx="6.4" cy="12" r="3.7"/></g><circle cx="12" cy="12" r="2.7" fill="#b5652a"/></svg></i>Izvod</a>
     <nav aria-label="Meniu">
       <a href="#sat-zona">Satul</a>
-      <a href="#ce-gasesti">Ce găsești</a>
+      <a href="#oameni">Oameni și case</a>
+      <a href="#modele">Modele</a>
       <a href="#aplicatia">Aplicația</a>
+      <a href="#evenimente">Evenimente</a>
       <a href="#sprijin">Sprijin</a>
     </nav>
   </div>
@@ -219,6 +232,21 @@ section{scroll-margin-top:100px}.app-shots{display:grid;grid-template-columns:re
     </div>
   </section>
 
+
+  <section id="oameni">
+    <div class="band">
+      <div>
+        <div class="eyebrow">Oameni și case</div>
+        <h2>Meșteri și case vechi, povestite de cei care le știu</h2>
+        <p class="sub" style="margin-bottom:14px">Mergem prin sate și stăm de vorbă cu meșteri care încă lucrează cu mâna și cu oameni care locuiesc în case bătrânești. Filmele vor sta aici, fiecare cu satul, meșteșugul și câteva rânduri scrise.</p>
+        <p class="sub" style="margin-bottom:22px">Cunoști un meșter, o bunică ce mai țese ori o casă veche în care încă se locuiește? Spune-ne cine este, în ce sat și cum putem da de el sau de ea, dacă persoana e de acord.</p>
+        <div class="btns"><a class="btn main" href="mailto:izvodapp@gmail.com?subject=Un%20me%C8%99ter%20sau%20o%20cas%C4%83%20veche%20pentru%20Izvod">Propune un meșter sau o casă</a></div>
+      </div>
+      <div class="film"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg><b>Va urma</b>Primele filme sunt în lucru.</div></div>
+    </div>
+    <p class="note">Filmăm numai cu acordul scris al fiecărui om. Casele le arătăm la nivel de sat, fără adresă.</p>
+  </section>
+
   <section id="modele">
     <div class="band">
       <div>
@@ -241,15 +269,36 @@ section{scroll-margin-top:100px}.app-shots{display:grid;grid-template-columns:re
 <article class="card"><span class="eyebrow">Descoperă și învață</span><h3>Ie</h3><p>Calendarul satului, portul, bucatele, poveștile, harta și jocurile cu diferențe, adunate într-un singur loc.</p><span class="tag">Gratuită</span></article>
 <article class="card"><span class="eyebrow">Un răgaz lângă foc</span><h3>Vatra</h3><p>Ghicitori, povești și colinde pentru momentele în care vrei să te așezi și să asculți.</p><span class="tag">4,99 lei · o singură plată</span></article>
 <article class="card"><span class="eyebrow">Plimbă-te și descoperă</span><h3>Satul</h3><p>Un sat desenat și viu, care se schimbă cu ora, anotimpul și vremea de afară. Explorează locurile pe care le poți atinge.</p><span class="tag">4,99 lei · o singură plată</span></article>
-</div><p class="sub" style="margin-top:22px">Fără abonament. Aplicația este în testare pe Google Play. Până la lansare, poți explora varianta de probă direct aici.</p>
+<article class="card"><span class="eyebrow">Citește și aprinde stele</span><h3>Constelație</h3><p>Fiecare ramură e o stea mare pe un cer de noapte. Filele ei se aprind una câte una, pe măsură ce le citești.</p><span class="tag">4,99 lei · o singură plată</span></article>
+<article class="card"><span class="eyebrow">Dulce și jucăușă</span><h3>Steluțe</h3><p>Același cer, în culori blânde, cu stele cu chip și o lună care doarme.</p><span class="tag">Gratuită</span></article>
+</div><p class="sub" style="margin-top:22px">Vatra, Satul și Constelație împreună: 9,99 lei. Fără abonament. Aplicația este în testare pe Google Play. Până la lansare, poți explora varianta de probă direct aici.</p>
 <div class="btns"><button class="btn main" id="openapp" type="button">Încearcă aplicația</button><a class="btn ghost" href="#o-pagina">Citește o fișă</a></div>
-<p class="capture-note">Varianta web include fișe, calendar, căutare și salvarea fișelor în browser. Jocurile, Vatra și Satul fac parte din aplicația pentru telefon.</p>
+<p class="capture-note">Varianta web include fișe, calendar, căutare și salvarea fișelor în browser. Jocurile și temele Vatra, Satul, Constelație și Steluțe fac parte din aplicația pentru telefon.</p>
 </section>
 <section id="o-pagina"><div class="eyebrow">O pagină din Izvod</div><h2>O datină, cu povestea ei</h2>
 <p class="sub">Un fragment dintr-o fișă pe care o poți citi în demonstrație.</p>
 <article class="sample-card"><div><span class="tag">Calendarul satului · Transilvania · 8 noiembrie</span><h3>Turta berbecarilor</h3><p>La Arhangheli, în unele locuri din Transilvania, păstorii aruncau o turtă în mijlocul turmei. Felul în care cădea era privit ca un semn pentru primăvară: cu fața în sus vestea bine, iar cu fața în jos era socotit semn rău.</p><p class="capture-note">O credință consemnată în sursă, prezentată ca parte a culturii tradiționale.</p><button class="btn main" type="button" data-demo="scene:h_turtaberbecarilor">Citește fișa întreagă</button></div><aside><div class="eyebrow">Din cărți</div><p>Ion Ghinoiu, Dicționar de mitologie românească (Univers Enciclopedic Gold, 2013), articolul „Turtă a berbecarilor”</p><p class="capture-note">Trimiterea este cea din fișa aplicației. Pentru acest articol, fișa indică titlul intrării din dicționar.</p></aside></article></section>
 <section id="intrebari"><div class="eyebrow">Bine de știut</div><h2>Înainte să intri în sat</h2>
-<details class="faq-item"><summary>Ce este gratuit?</summary><p>Partea Ie este gratuită și cuprinde calendarul, poveștile, jocurile cu diferențe, harta, portul și bucatele.</p></details><details class="faq-item"><summary>Este nevoie de abonament?</summary><p>Nu. Vatra și Satul se deblochează separat, fiecare printr-o singură plată de 4,99 lei.</p></details><details class="faq-item"><summary>De unde provin informațiile?</summary><p>Din cărți și lucrări de etnografie. Fiecare fișă are sursa indicată, iar conținutul încă neverificat este marcat ca exemplu.</p></details><details class="faq-item"><summary>Ce pot încerca pe site?</summary><p>Poți răsfoi calendarul și fișele, poți căuta un subiect și poți salva fișele preferate în acest browser. Demonstrația web nu include toate funcțiile aplicației pentru telefon.</p></details><details class="faq-item"><summary>Când pot descărca aplicația?</summary><p>Aplicația este în testare pe Google Play. Linkul de descărcare va apărea aici când se deschide pentru toți.</p></details><details class="faq-item"><summary>Cum trimit o observație sau o corectură?</summary><p>Scrie la <a href="mailto:izvodapp@gmail.com">izvodapp@gmail.com</a>. Spune la ce fișă te referi și adaugă, dacă ai, sursa care ajută la verificare.</p></details>
+<details class="faq-item"><summary>Ce este gratuit?</summary><p>Temele Ie și Steluțe sunt gratuite. Ie cuprinde calendarul, poveștile, jocurile cu diferențe, harta, portul și bucatele.</p></details><details class="faq-item"><summary>Este nevoie de abonament?</summary><p>Nu. Vatra, Satul și Constelație se deblochează separat, fiecare printr-o singură plată de 4,99 lei, sau toate trei împreună la 9,99 lei.</p></details><details class="faq-item"><summary>De unde provin informațiile?</summary><p>Din cărți și lucrări de etnografie. Fiecare fișă are sursa indicată, iar conținutul încă neverificat este marcat ca exemplu.</p></details><details class="faq-item"><summary>Ce pot încerca pe site?</summary><p>Poți răsfoi calendarul și fișele, poți căuta un subiect și poți salva fișele preferate în acest browser. Demonstrația web nu include toate funcțiile aplicației pentru telefon.</p></details><details class="faq-item"><summary>Când pot descărca aplicația?</summary><p>Aplicația este în testare pe Google Play. Linkul de descărcare va apărea aici când se deschide pentru toți.</p></details><details class="faq-item"><summary>Cum trimit o observație sau o corectură?</summary><p>Scrie la <a href="mailto:izvodapp@gmail.com">izvodapp@gmail.com</a>. Spune la ce fișă te referi și adaugă, dacă ai, sursa care ajută la verificare.</p></details>
+</section>
+
+<section id="evenimente"><div class="eyebrow">Evenimente</div><h2>Târguri, festivaluri și șezători</h2>
+<p class="sub">Se țin an de an, dar datele se schimbă de la un an la altul. Întreabă la organizatori înainte de drum.</p>
+<h3 class="season">Primăvara</h3>
+<div class="grid">
+<article class="card ev"><span class="where">Județul Giurgiu</span><h3>Mugurel de sălcioară</h3><p>Festivalul județean al obiceiurilor de primăvară.</p><span class="tag">martie–aprilie</span></article>
+<article class="card ev"><span class="where">Giurgiu</span><h3>Ca pe Vlașca</h3><p>Festival de folclor pentru copii și tineret.</p><span class="tag">în mai</span></article>
+</div>
+<h3 class="season">Vara</h3>
+<div class="grid">
+<article class="card ev"><span class="where">Giurgiu</span><h3>Călușul ca pe Vlașca</h3><p>Festival județean de călușari.</p><span class="tag">în iunie</span></article>
+<article class="card ev"><span class="where">Giurgiu</span><h3>Pe marginea Dunării</h3><p>Festival-concurs de muzică populară.</p><span class="tag">în iunie</span></article>
+<article class="card ev"><span class="where">În multe orașe</span><h3>Ziua Iei</h3><p>Ie, joc și cântec în parcuri și muzee.</p><span class="tag">24 iunie</span></article>
+<article class="card ev"><span class="where">Avram Iancu, județul Alba</span><h3>Târgul de Fete de pe Muntele Găina</h3><p>Târg vechi pe platoul muntelui, cu meșteri și spectacole folclorice.</p><span class="tag">în jurul zilei de 20 iulie</span></article>
+<article class="card ev"><span class="where">Brăila</span><h3>Cântecul de dragoste de-a lungul Dunării</h3><p>Festival de muzică populară pe Esplanada Dunării.</p><span class="tag">în iulie</span></article>
+<article class="card ev"><span class="where">Pasul Prislop</span><h3>Hora de la Prislop</h3><p>O zi de joc între Maramureș, Moldova și Transilvania.</p><span class="tag">sfârșit de august</span></article>
+</div>
+<p class="note">Mai multe găsești în aplicație, la Evenimente, pe județe. Organizezi un târg, o șezătoare ori un atelier? Scrie la <a href="mailto:izvodapp@gmail.com?subject=Eveniment%20pentru%20Izvod">izvodapp@gmail.com</a> și îl trecem aici.</p>
 </section>
 
 <section id="utilaje"><div class="eyebrow">Din satul tău</div><h2>Ai o fotografie cu un utilaj vechi?</h2><p class="sub">Ajută-ne să adunăm imagini cu tractoare, pluguri, semănători și batoze. Trimite o fotografie făcută de tine sau una liberă de drepturi, împreună cu locul, anul aproximativ și numele fotografului.</p><div class="btns"><a class="btn ghost" href="mailto:izvodapp@gmail.com?subject=Fotografie%20pentru%20Izvod">Trimite o fotografie</a></div><div class="gal" id="gal" hidden></div></section>
@@ -260,6 +309,13 @@ section{scroll-margin-top:100px}.app-shots{display:grid;grid-template-columns:re
       <p>Izvod e făcut de o singură persoană, din cărți, răbdare și multe seri. Dacă ți-a fost de folos, poți susține munca printr-o donație mică. Butonul apare aici imediat ce e gata.</p>
       <span class="btn">În curând: un Ko-fi</span>
     </div>
+    <div class="grid help">
+<div class="card"><h3>O carte veche</h3><p>Ai acasă o carte de cusături, de obiceiuri ori o monografie de sat? Trimite titlul sau câteva poze.</p></div>
+<div class="card"><h3>O poză veche</h3><p>Poze de familie cu port popular, cu case, cu nunți. Le punem doar cu voia ta.</p></div>
+<div class="card"><h3>O poveste</h3><p>Ce îți spunea bunica: o credință, o rețetă de post, un cântec.</p></div>
+<div class="card"><h3>Un meșter</h3><p>Spune-ne pe cine ar trebui să filmăm.</p></div>
+    </div>
+    <p class="note">Până apare butonul, ne ajuți și fără bani. Scrie la <a href="mailto:izvodapp@gmail.com">izvodapp@gmail.com</a>.</p>
   </section>
 
   <section id="contact">
